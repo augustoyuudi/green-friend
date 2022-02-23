@@ -1,0 +1,36 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 70px;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 40px;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 55px;
+  }
+}
+
+b, strong {
+  font-weight: 700;
+}

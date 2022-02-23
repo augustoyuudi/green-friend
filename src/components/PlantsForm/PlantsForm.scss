@@ -1,0 +1,46 @@
+@use '../../styles/colors';
+
+.form {
+  padding: 1rem 2.25rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  color: colors.$main-gray;
+  gap: 3.125rem 0;
+  width: 100%;
+
+  @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3.5rem 0;
+      max-width: 900px;
+      margin: 0 auto;
+  }
+
+  &__filter {
+      img[alt*="watering can"] {
+          transform: rotateY(180deg);
+      }
+
+      @media screen and (min-width: 1024px) {
+          max-width: 220px;
+      }
+  }
+
+  &__icon {
+      margin-bottom: .5rem;
+      width: auto;
+      height: 4.75rem;
+  }
+
+  &__label {
+      display: block;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+  }
+
+  .select {
+      width: 100%;
+
+  }
+}
