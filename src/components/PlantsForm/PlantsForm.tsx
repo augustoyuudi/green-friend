@@ -5,7 +5,7 @@ import wateringCan from '../../assets/illustrations/wateringcan.png';
 import dog from '../../assets/illustrations/dog.png';
 import Select from '../Select/Select';
 
-function PlantsForm() {
+function PlantsForm({ onFetch }: {onFetch: Function}) {
   const sunlightOptions = [
     ['no', 'None'],
     ['low', 'Low'],
@@ -26,6 +26,7 @@ function PlantsForm() {
   const [sunlight, setSunlight] = useState(null);
   const [water, setWater] = useState(null);
   const [pets, setPets] = useState(null);
+  const [plants, setPlants] = useState([]);
 
   useEffect(() => {
     if (!sunlight || !water || !pets) {
@@ -35,12 +36,16 @@ function PlantsForm() {
     fetch(url)
       .then(async (response) => {
         const data = await response.json();
-        console.log(data);
+        setPlants(data);
       })
       .catch((error) => {
         console.error(error);
       });
   }, [sunlight, water, pets]);
+
+  useEffect(() => {
+    onFetch(plants);
+  }, [plants, onFetch]);
 
   return (
     <form action='post' className='form' id='form'>
